@@ -1,0 +1,310 @@
+/* ── Variables ── */
+:root {
+  --sage: #8fa88a;
+  --sage-light: #e8efe7;
+  --sage-dark: #6b8566;
+  --cream: #faf8f5;
+  --sand: #f0ebe3;
+  --warm-gray: #7a7572;
+  --dark: #2c2c2c;
+  --white: #ffffff;
+}
+
+/* ── Layout ── */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--dark);
+  text-align: center;
+  margin-bottom: 48px;
+  letter-spacing: 0.5px;
+}
+
+/* ── Navigation ── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-logo {
+  width: 160px;
+  color: var(--dark);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--sage-dark);
+}
+
+/* ── Hero ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  text-align: center;
+  padding: 80px 24px 64px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-logo {
+  width: 380px;
+  max-width: 100%;
+  color: var(--dark);
+  margin-bottom: 32px;
+}
+
+.hero-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--warm-gray);
+  letter-spacing: 0.3px;
+  margin-bottom: 8px;
+}
+
+.hero-location {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--sage-dark);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ── About ── */
+.about {
+  padding: 96px 0;
+  background: var(--white);
+}
+
+.about-content {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--warm-gray);
+  margin-bottom: 24px;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Menu ── */
+.menu {
+  padding: 96px 0;
+  background: var(--cream);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.menu-category {
+  text-align: left;
+}
+
+.menu-category-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--dark);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--sage);
+}
+
+.menu-items {
+  list-style: none;
+}
+
+.menu-item {
+  padding: 8px 0;
+  font-size: 1rem;
+  color: var(--warm-gray);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-also {
+  margin-top: 48px;
+  text-align: left;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Find Us ── */
+.find-us {
+  padding: 96px 0;
+  background: var(--white);
+}
+
+.find-us-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  text-align: center;
+}
+
+.find-us-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--dark);
+  margin-bottom: 16px;
+}
+
+.find-us-card p,
+.find-us-card li {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--warm-gray);
+}
+
+.find-us-card ul {
+  list-style: none;
+}
+
+.find-us-meta {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--sage-dark);
+  font-weight: 500;
+}
+
+/* ── Footer ── */
+.footer {
+  background: var(--dark);
+  padding: 48px 0;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 180px;
+  margin: 0 auto 16px;
+  color: var(--white);
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.3px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .nav-logo {
+    width: 130px;
+  }
+
+  .hero {
+    min-height: 80vh;
+    padding: 80px 24px 48px;
+  }
+
+  .hero-logo {
+    width: 280px;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 36px;
+  }
+
+  .about,
+  .menu,
+  .find-us {
+    padding: 64px 0;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .find-us-content {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 14px;
+  }
+
+  .hero-logo {
+    width: 220px;
+  }
+
+  .hero-tagline {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
