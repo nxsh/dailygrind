@@ -44,39 +44,65 @@ interface MenuCategory {
 
 const menuData: MenuCategory[] = [
   {
+    title: 'Freshly Ground Cornish Coffee',
+    items: ['Americano', 'Cappuccino', 'Flat White', 'Mocca'],
+  },
+  {
     title: 'Breakfast Sandwiches',
     items: [
-      'Cornish Egg',
-      'Bacon / Sausage',
-      'Bacon & Cornish Egg',
+      '2 x Rasher Bacon (locally sourced)',
+      '2 x Sausage (locally sourced)',
+      '2 x Free Range Eggs',
       'B.L.T',
-      'Bacon and Sausage',
+      'Meat Feast - Double Bacon, Double Sausage',
+      'Full Monty - 2 x Bacon, 2 x Sausage, 1 x Egg',
     ],
   },
   {
-    title: 'Pasties',
+    title: 'Pasties / Sausage Rolls',
     items: [
       'Traditional Steak',
-      'Vegetable',
-      'Cheese',
-      'Vegan',
+      'Vegetarian / Vegan',
+      'Cheese & Onion',
       'Sausage Roll',
     ],
   },
   {
     title: 'Freshly Made Sandwiches',
     items: [
-      'Ham',
+      'Egg Mayo',
+      'Tuna Mayo',
       'Cheese',
-      'Cheese & Onion',
-      'Egg Mayonnaise',
-      'Tuna Mayonnaise',
+      'Ham & Cheese',
+      'Fish Finger',
+      'Salmon & Cream Cheese Bagel',
     ],
   },
   {
-    title: 'Extra Fillings',
-    items: ['Bacon', 'Cucumber', 'Lettuce', 'Onion'],
+    title: 'Extras',
+    items: ['Egg', 'Hashbrown', 'Beans'],
   },
+  {
+    title: 'Also Available',
+    items: [
+      'Delux Hot Chocolate',
+      'Milk Shakes',
+      'Large Selection of Teas',
+      'Cold Drinks',
+      'Freshly baked cakes & biscuits',
+      'A selection of savoury delights',
+      'Callistick Cornish Ice Creams',
+    ],
+  },
+]
+
+const galleryImages = [
+  { src: '/gallery/shopfront.jpg', alt: 'Daily Grind shopfront' },
+  { src: '/gallery/coffee-cup.jpg', alt: 'Coffee at Daily Grind' },
+  { src: '/gallery/sandwich.jpg', alt: 'Bacon sandwich with Cornish coffee' },
+  { src: '/gallery/interior.jpg', alt: 'Inside Daily Grind' },
+  { src: '/gallery/menu-board.jpg', alt: 'Our menu board' },
+  { src: '/gallery/coach-tours.jpg', alt: 'Vintage coach tours sign' },
 ]
 
 function App() {
@@ -87,6 +113,7 @@ function App() {
           <Logo className="nav-logo" />
           <ul className="nav-links">
             <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#find-us">Find Us</a></li>
           </ul>
@@ -98,6 +125,10 @@ function App() {
           <Logo className="hero-logo" />
           <p className="hero-tagline">Freshly Ground Cornish Coffee & More</p>
           <p className="hero-location">Port Isaac, Cornwall</p>
+          <div className="hero-social">
+            <a href="https://www.facebook.com/lazydayscafeportisaac" target="_blank" rel="noreferrer" className="social-link">Facebook</a>
+            <a href="https://www.instagram.com/dailygrind_portisaac/" target="_blank" rel="noreferrer" className="social-link">Instagram</a>
+          </div>
         </div>
       </section>
 
@@ -119,8 +150,21 @@ function App() {
             </p>
             <p>
               We also stock a selection of locally made fudge, freshly baked
-              biscuits, and artisan products from across Cornwall.
+              biscuits, and Callistick Cornish ice creams.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="gallery" id="gallery">
+        <div className="container">
+          <h2 className="section-title">Gallery</h2>
+          <div className="gallery-grid">
+            {galleryImages.map((img) => (
+              <div className="gallery-item" key={img.src}>
+                <img src={img.src} alt={img.alt} loading="lazy" />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -128,6 +172,7 @@ function App() {
       <section className="menu" id="menu">
         <div className="container">
           <h2 className="section-title">Menu</h2>
+          <p className="menu-subtitle">Come in, enjoy or just say hello...</p>
           <div className="menu-grid">
             {menuData.map((category) => (
               <div className="menu-category" key={category.title}>
@@ -140,14 +185,7 @@ function App() {
               </div>
             ))}
           </div>
-          <div className="menu-also">
-            <h3 className="menu-category-title">Also Available</h3>
-            <ul className="menu-items">
-              <li className="menu-item">Freshly baked cakes and biscuits</li>
-              <li className="menu-item">Full selection of freshly ground Cornish coffee</li>
-              <li className="menu-item">Fudge</li>
-            </ul>
-          </div>
+          <p className="menu-note">All prices on menu inside. Toasted sandwiches also available.</p>
         </div>
       </section>
 
@@ -169,7 +207,10 @@ function App() {
             </div>
             <div className="find-us-card">
               <h3>Follow Us</h3>
-              <p>Find us on Facebook</p>
+              <div className="social-links-vertical">
+                <a href="https://www.facebook.com/lazydayscafeportisaac" target="_blank" rel="noreferrer">Facebook</a>
+                <a href="https://www.instagram.com/dailygrind_portisaac/" target="_blank" rel="noreferrer">Instagram</a>
+              </div>
               <p className="find-us-meta">100% recommended &middot; 75 reviews</p>
             </div>
           </div>
@@ -179,6 +220,10 @@ function App() {
       <footer className="footer">
         <div className="container">
           <Logo className="footer-logo" />
+          <div className="footer-social">
+            <a href="https://www.facebook.com/lazydayscafeportisaac" target="_blank" rel="noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/dailygrind_portisaac/" target="_blank" rel="noreferrer">Instagram</a>
+          </div>
           <p className="footer-copy">&copy; {new Date().getFullYear()} Daily Grind, Port Isaac. All rights reserved.</p>
         </div>
       </footer>
