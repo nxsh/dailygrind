@@ -354,15 +354,17 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .nav-links {
-    gap: 20px;
+    gap: 16px;
   }
 
   .nav-links a {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
   }
 
   .nav-logo {
-    width: 130px;
+    width: 110px;
+    flex-shrink: 0;
   }
 
   .hero {
@@ -407,7 +409,11 @@
 
 @media (max-width: 480px) {
   .nav-links {
-    gap: 14px;
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 0.65rem;
   }
 
   .hero-logo {
