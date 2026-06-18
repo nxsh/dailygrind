@@ -74,13 +74,7 @@ const menuData: MenuCategory[] = [
       'Tuna Mayo',
       'Cheese',
       'Ham & Cheese',
-      'Fish Finger',
-      'Salmon & Cream Cheese Bagel',
     ],
-  },
-  {
-    title: 'Extras',
-    items: ['Egg', 'Hashbrown', 'Beans'],
   },
   {
     title: 'Also Available',
@@ -139,7 +133,7 @@ function App() {
             <p>
               Daily Grind is a neighbourhood coffee shop on the Cornish coast,
               nestled in the heart of Port Isaac. We serve freshly ground coffee
-              from DR Wakefield, a trusted Cornish roaster, alongside breakfast
+              from Cornish &#174; Tea and Coffee, alongside breakfast
               sandwiches, pasties, and homemade cakes.
             </p>
             <p>
