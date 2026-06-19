@@ -102,6 +102,8 @@ const galleryImages = [
   { src: '/gallery/insta-2.jpg', alt: 'Daily Grind' },
   { src: '/gallery/insta-3.jpg', alt: 'Daily Grind' },
   { src: '/gallery/insta-4.jpg', alt: 'Daily Grind' },
+  { src: '/gallery/insta-5.jpg', alt: 'Daily Grind' },
+  { src: '/gallery/insta-6.jpg', alt: 'Daily Grind' },
 ]
 
 function Gallery() {
