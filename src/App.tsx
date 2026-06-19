@@ -92,18 +92,22 @@ const menuData: MenuCategory[] = [
 ]
 
 const galleryImages = [
-  { src: '/gallery/shopfront.jpg', alt: 'Daily Grind shopfront' },
-  { src: '/gallery/coffee-cup.jpg', alt: 'Coffee at Daily Grind' },
-  { src: '/gallery/sandwich.jpg', alt: 'Bacon sandwich with Cornish coffee' },
-  { src: '/gallery/interior.jpg', alt: 'Inside Daily Grind' },
+  // Shopfronts
+  { src: '/gallery/shopfront.jpg', alt: 'Daily Grind shopfront, Port Isaac' },
+  { src: '/gallery/insta-5.jpg', alt: 'Daily Grind shopfront with Callestick ice cream' },
+  { src: '/gallery/coffee-cup.jpg', alt: 'Coffee outside Daily Grind' },
+  // The man
+  { src: '/gallery/insta-1.jpg', alt: 'Serving up at Daily Grind' },
+  { src: '/gallery/interior.jpg', alt: 'Inside Daily Grind - Cornish coffee and treats' },
   { src: '/gallery/menu-board.jpg', alt: 'Our menu board' },
-  { src: '/gallery/coach-tours.jpg', alt: 'Vintage coach tours sign' },
-  { src: '/gallery/insta-1.jpg', alt: 'Daily Grind' },
-  { src: '/gallery/insta-2.jpg', alt: 'Daily Grind' },
-  { src: '/gallery/insta-3.jpg', alt: 'Daily Grind' },
-  { src: '/gallery/insta-4.jpg', alt: 'Daily Grind' },
-  { src: '/gallery/insta-5.jpg', alt: 'Daily Grind' },
-  { src: '/gallery/insta-6.jpg', alt: 'Daily Grind' },
+  // Coffee
+  { src: '/gallery/insta-2.jpg', alt: 'Delux hot chocolate with cream and marshmallows' },
+  { src: '/gallery/insta-3.jpg', alt: 'Cornish Tea and Coffee on the coast' },
+  { src: '/gallery/insta-4.jpg', alt: 'Cornish coffee with a sea view' },
+  // Food
+  { src: '/gallery/sandwich.jpg', alt: 'Bacon sandwich with Cornish coffee' },
+  { src: '/gallery/insta-6.jpg', alt: 'Fresh sandwich at Daily Grind' },
+  { src: '/gallery/coach-tours.jpg', alt: 'Vintage coach tours sign at Port Isaac' },
 ]
 
 function Gallery() {
