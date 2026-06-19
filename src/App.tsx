@@ -98,6 +98,10 @@ const galleryImages = [
   { src: '/gallery/interior.jpg', alt: 'Inside Daily Grind' },
   { src: '/gallery/menu-board.jpg', alt: 'Our menu board' },
   { src: '/gallery/coach-tours.jpg', alt: 'Vintage coach tours sign' },
+  { src: '/gallery/insta-1.jpg', alt: 'Daily Grind' },
+  { src: '/gallery/insta-2.jpg', alt: 'Daily Grind' },
+  { src: '/gallery/insta-3.jpg', alt: 'Daily Grind' },
+  { src: '/gallery/insta-4.jpg', alt: 'Daily Grind' },
 ]
 
 function Gallery() {
