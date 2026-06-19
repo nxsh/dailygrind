@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# Daily Grind - Port Isaac
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website for Daily Grind coffee shop, Port Isaac, Cornwall.
 
-Currently, two official plugins are available:
+**Live:** https://dailygrindportisaac.co.uk
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech
 
-## React Compiler
+- React + Vite + TypeScript
+- Hosted on Cloudflare Pages
+- Domain via Cloudflare Registrar
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## TODO
 
-## Expanding the ESLint configuration
+### Get indexed by Google (Google Search Console)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This is how the site gets found in Google search results.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Go to https://search.google.com/search-console
+2. Click "Add property"
+3. Choose "URL prefix" and enter: `https://dailygrindportisaac.co.uk`
+4. For verification, choose "DNS record" method
+   - It will give you a TXT record to add (something like `google-site-verification=xxxxxxxxxxxx`)
+   - Go to Cloudflare dashboard -> dailygrindportisaac.co.uk -> DNS
+   - Add a new record: Type = TXT, Name = @, Content = (paste the google verification string)
+   - Go back to Search Console and click Verify
+5. Once verified, go to "Sitemaps" in the left menu
+6. Enter: `https://dailygrindportisaac.co.uk/sitemap.xml` and click Submit
+7. Google will start crawling and indexing the site within a few days
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+**Note:** If you need help with this, ask Ryan (or his Claude instance) to add the DNS TXT record - the Cloudflare API token has DNS edit permissions.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Set up Google Business Profile
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This is what makes the business show up on Google Maps and in "coffee shop near me" searches. Much more important than the website for local discovery.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Go to https://business.google.com
+2. Click "Add your business to Google"
+3. Search for "Daily Grind Port Isaac" - it might already exist as an unclaimed listing
+4. If it exists, click "Claim this business" and follow verification (usually a postcard to the shop address, or a phone call)
+5. If it doesn't exist, create it:
+   - Business name: Daily Grind
+   - Category: Coffee shop
+   - Address: 14 New Road, Port Isaac, PL29 3SB
+   - Phone: (add the shop phone number)
+   - Website: https://dailygrindportisaac.co.uk
+   - Hours: fill in opening times
+6. Add photos (use the same ones from the website gallery)
+7. Once verified, the business will appear on Google Maps and in local search results
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**This must be done by the business owner** as Google sends verification to the business address. It cannot be done remotely.
+
+### Optional: Add a booking/ordering system
+
+Options discussed:
+- WhatsApp button (simplest - just links to wa.me with a pre-filled message)
+- Simple contact form that emails the shop
+- Full booking system with time slots
