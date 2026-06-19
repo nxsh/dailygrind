@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 
 function Logo({ className }: { className?: string }) {
@@ -99,6 +100,39 @@ const galleryImages = [
   { src: '/gallery/coach-tours.jpg', alt: 'Vintage coach tours sign' },
 ]
 
+function Gallery() {
+  const [selected, setSelected] = useState<number | null>(null)
+
+  const close = () => setSelected(null)
+  const prev = () => setSelected(i => i !== null ? (i - 1 + galleryImages.length) % galleryImages.length : null)
+  const next = () => setSelected(i => i !== null ? (i + 1) % galleryImages.length : null)
+
+  return (
+    <section className="gallery" id="gallery">
+      <div className="container">
+        <h2 className="section-title">Gallery</h2>
+        <div className="gallery-grid">
+          {galleryImages.map((img, i) => (
+            <div className="gallery-item" key={img.src} onClick={() => setSelected(i)}>
+              <img src={img.src} alt={img.alt} loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </div>
+      {selected !== null && (
+        <div className="lightbox" onClick={close}>
+          <div className="lightbox-content" onClick={e => e.stopPropagation()}>
+            <button className="lightbox-close" onClick={close} aria-label="Close">&times;</button>
+            <button className="lightbox-prev" onClick={prev} aria-label="Previous">&lsaquo;</button>
+            <img src={galleryImages[selected].src} alt={galleryImages[selected].alt} className="lightbox-img" />
+            <button className="lightbox-next" onClick={next} aria-label="Next">&rsaquo;</button>
+          </div>
+        </div>
+      )}
+    </section>
+  )
+}
+
 function App() {
   return (
     <div className="app">
@@ -150,18 +184,7 @@ function App() {
         </div>
       </section>
 
-      <section className="gallery" id="gallery">
-        <div className="container">
-          <h2 className="section-title">Gallery</h2>
-          <div className="gallery-grid">
-            {galleryImages.map((img) => (
-              <div className="gallery-item" key={img.src}>
-                <img src={img.src} alt={img.alt} loading="lazy" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Gallery />
 
       <section className="menu" id="menu">
         <div className="container">
